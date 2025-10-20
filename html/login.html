@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập - TFT Coffee</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <a class="logo" href="index.html">
+          <i class="fa-solid fa-skull-crossbones logo-icon"></i>
+          <div class="logo-text">TFT<span>COFFEE</span></div>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="./index.html">Trang Chủ</a></li>
+            <li><a href="./products.html">Sản Phẩm</a></li>
+            <li><a href="./checkout.html" id="go-checkout">Thanh Toán</a></li>
+            <li><a href="#">Thông Tin</a></li>
+          </ul>
+        </nav>
+        <div class="nav-buttons">
+          <a href="./login.html" class="btn btn-secondary">Đăng Nhập</a>
+          <a href="./register.html" class="btn btn-secondary">Đăng Ký</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="checkout-page" style="max-width: 450px">
+      <h2>Đăng nhập</h2>
+      <form id="login-form" class="checkout-form">
+        <label for="username">Tên đăng nhập</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="Nhập tên đăng nhập..."
+          required
+        />
+
+        <label for="password">Mật khẩu</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Nhập mật khẩu..."
+          required
+        />
+
+        <button type="submit" class="btn btn-pay">Đăng nhập</button>
+      </form>
+
+      <p style="text-align: center; margin-top: 15px; color: #6f4e37">
+        Chưa có tài khoản?
+        <a href="register.html" style="color: #c59d5f">Đăng ký ngay</a>
+      </p>
+    </main>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>

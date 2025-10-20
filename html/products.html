@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - TFT Coffee</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <!-- Giỏ hàng dính góc phải -->
+  <div class="floating-cart" id="floating-cart">
+    <div class="cart-header">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="cart-count">0</span>
+      <button id="toggle-cart"><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+    <div class="cart-body hidden" id="cart-body">
+      <ul id="cart-items"></ul>
+      <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+      <div class="cart-buttons">
+        <button id="clear-cart" class="btn1 clear-cart">Clear Cart</button>
+        <a href="checkout.html" id="checkout-btn" class="btn1 checkout-btn"
+          >Thanh Toán</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <body>
+    <header>
+      <div class="container header-container">
+        <a class="logo" href="index.html">
+          <i class="fa-solid fa-skull-crossbones logo-icon"></i>
+          <div class="logo-text">TFT<span>COFFEE</span></div>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="./index.html">Trang Chủ</a></li>
+            <li><a href="./products.html">Sản Phẩm</a></li>
+            <li><a href="./checkout.html" id="go-checkout">Thanh Toán</a></li>
+            <li><a href="#">Thông Tin</a></li>
+          </ul>
+        </nav>
+        <div class="nav-buttons">
+          <a href="./login.html" class="btn btn-secondary">Sign In</a>
+          <a href="./register.html" class="btn btn-secondary">Đăng Ký</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="products" id="products" style="padding-top: 150px">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Our Selection</div>
+          <h2 class="section-title">Signature Coffee Blends</h2>
+          <p class="section-desc">
+            Each batch is carefully roasted to highlight the unique
+            characteristics of the beans.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./1.png" alt="Ethiopian Yirgacheffe" />
+            </div>
+            <div class="product-info">
+              <div class="product-tag">BESTSELLER</div>
+              <h3 class="product-title">Ethiopian Yirgacheffe</h3>
+              <p class="product-desc">Floral notes with bright acidity</p>
+              <div class="product-footer">
+                <div class="product-price">$18.99</div>
+                <button
+                  class="btn add-to-cart"
+                  data-name="Ethiopian Yirgacheffe"
+                  data-price="18.99"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./1.png" alt="Colombian Supremo" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Colombian Supremo</h3>
+              <p class="product-desc">Rich caramel and balanced body</p>
+              <div class="product-footer">
+                <div class="product-price">$16.99</div>
+                <button
+                  class="btn add-to-cart"
+                  data-name="Ethiopian Yirgacheffe"
+                  data-price="18.99"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./1.png" alt="Dark Roast" />
+            </div>
+            <div class="product-info">
+              <div class="product-tag">NEW</div>
+              <h3 class="product-title">Dark Roast</h3>
+              <p class="product-desc">Bold and intense with deep flavor</p>
+              <div class="product-footer">
+                <div class="product-price">$17.99</div>
+                <div class="product-footer">
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Ethiopian Yirgacheffe"
+                    data-price="18.99"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-colum">
+            <h3>About Me</h3>
+            <p style="color: var(--coffee-accent); margin-bottom: 20px">
+              Coffee
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>
