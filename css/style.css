@@ -50,6 +50,7 @@ header {
   text-decoration: none;
 }
 .logo-icon {
+  font-size: 20px;
   color: var(--coffee-gold);
   font-size: 28px;
 }
@@ -125,6 +126,18 @@ nav a:hover:after {
   overflow: hidden;
   padding-top: 80px;
 }
+.hero-img {
+  background: var(--coffee-dark);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  top: 0;
+  animation: fadeInUp 1s ease-out;
+}
+.hero-img:hover {
+  transform: translateY(-15px);
+  border: 4px solid var(--coffee-gold);
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -170,9 +183,9 @@ nav a:hover:after {
   position: relative;
 }
 .hero-text {
-  font-size: 16px;
-  margin-bottom: 120px;
-  max-width: 700px;
+  font-size: 20px;
+  margin-bottom: 50px;
+  max-width: 550px;
 }
 .hero-buttons {
   display: flex;
@@ -182,7 +195,7 @@ nav a:hover:after {
 .products {
   padding: 120px 0;
   position: relative;
-  background-color: #000000e2;
+  background-color: #010000;
   border-top: 4px solid var(--coffee-gold);
 }
 .section-header {
@@ -236,12 +249,12 @@ nav a:hover:after {
   border: 2px solid var(--coffee-gold);
 }
 .product-img {
-  height: 280px;
+  height: 350px;
   overflow: hidden;
 }
 .product-img img {
   width: 100%;
-  height: 100%;
+  height: 140%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -298,7 +311,7 @@ h4 {
 footer {
   background: var(--coffee-dark);
   color: var(--text-light);
-  padding: 70px 0 30px;
+  padding: 30px 0 30px;
   position: relative;
   border-top: 4px solid var(--coffee-gold);
 }
@@ -323,13 +336,16 @@ footer {
   height: 2px;
   background: var(--coffee-gold);
 }
-.footer-links {
+.footer-links li {
+  margin-top: 10px;
   list-style: none;
 }
 .footer-links a {
   color: var(--coffee-accent);
   text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
 }
 .footer-links a:hover {
   color: var(--coffee-gold);
