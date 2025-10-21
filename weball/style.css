@@ -1346,3 +1346,361 @@ footer {
   margin: 0;
   background-color: aliceblue;
 }
+
+/* === Breakpoint cho Tablet (<= 992px) === */
+@media (max-width: 992px) {
+  /* --- Bố cục trang Products (sidebar + grid) --- */
+  .products-layout {
+    grid-template-columns: 1fr; /* 1 cột duy nhất */
+    gap: 30px;
+  }
+
+  .side-nav {
+    position: static; /* Gỡ "dính" sidebar */
+    width: 100%;
+  }
+
+  .side-nav h3 {
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .category-list {
+    flex-direction: row; /* Chuyển danh mục thành hàng ngang */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .category-list a {
+    font-size: 20px;
+    padding: 8px 15px;
+    border: 2px solid var(--coffee-gold);
+    border-radius: 25px;
+    transition: all 0.3s ease; /* Add smooth transition */
+  }
+
+  .category-list a:hover {
+    background: var(--coffee-gold); /* Yellow background on hover */
+    color: var(--coffee-dark); /* Darker text for contrast */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+
+  .category-list a:hover::after {
+    width: 0; /* Remove underline effect */
+  }
+
+  /* Active state styling */
+  .category-list a.active {
+    background: var(--coffee-gold);
+    color: var(--coffee-dark);
+    transform: none;
+  }
+  /* --- Bố cục trang Information (grid 3 cột) --- */
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Chuyển thành 2 cột trên tablet */
+    padding: 20px;
+  }
+
+  /* --- Bố cục trang Online (form + summary) --- */
+  .delivery-grid {
+    flex-direction: column; /* Xếp chồng 2 cột */
+    gap: 30px;
+  }
+
+  .delivery-page .delivery-form,
+  .delivery-page .order-summary {
+    width: 100%; /* Mỗi cột chiếm 100% chiều rộng */
+  }
+}
+/*==================================*/
+/* === Breakpoint cho Mobile (<= 768px) === */
+@media (max-width: 768px) {
+  /* --- Header --- */
+  header {
+    padding: 20px 0;
+    position: fixed; /* Giữ header cố định khi cuộn */
+  }
+  body {
+    margin-top: 100px;
+  }
+  .header-container {
+    flex-direction: row-reverse; /* Xếp logo, nav, buttons theo cột */
+    gap: 15px;
+    align-items: center;
+    padding: 0 20px;
+  }
+  #nav-toggle {
+    order: 1; /* Đưa nút về đầu tiên bên trái */
+    margin-right: 10px; /* Thêm khoảng cách với logo */
+  }
+  nav ul {
+    flex-direction: column; /* Xếp các link nav theo cột */
+    gap: 10px;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  nav a {
+    font-size: 18px; /* Tăng cỡ chữ nav cho dễ bấm */
+  }
+
+  .nav-buttons {
+    justify-content: center; /* Căn giữa 2 nút Đăng nhập/Ký */
+    width: 100%;
+  }
+
+  /* --- Hero Section (Trang chủ) --- */
+  .hero {
+    height: auto;
+    padding-top: 250px; /* Tăng padding-top vì header cao hơn */
+    padding-bottom: 60px;
+    text-align: center;
+  }
+
+  .hero .container {
+    flex-direction: column; /* Xếp text và ảnh theo cột */
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-img {
+    display: none; /* Ẩn ảnh hero trên mobile cho gọn */
+  }
+
+  .hero-title {
+    font-size: 36px; /* Giảm cỡ chữ title */
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    justify-content: center; /* Căn giữa subtitle */
+    margin-bottom: 30px;
+  }
+
+  .hero-subtitle::before {
+    display: none; /* Ẩn gạch đầu dòng */
+  }
+
+  .hero-text {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    justify-content: center; /* Căn giữa các nút */
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* --- Tiêu đề chung (Section Titles) --- */
+  .section-title {
+    font-size: 32px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+  }
+
+  /* --- Padding chung --- */
+  .products,
+  .services-page,
+  .dine-in-page,
+  .delivery-page,
+  .information-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  /* Cần padding-top lớn hơn cho trang products vì header fixed */
+  .products-layout .product-area {
+    padding-top: 100px; /* Bù cho header */
+  }
+  .products-layout {
+    padding-top: 0;
+  }
+  /* Riêng trang products.html đã có padding top 150px, ta cần điều chỉnh lại */
+  section.products#products {
+    padding-top: 0; /* Reset padding cũ */
+  }
+  /* --- Trang Services (checkout.html) --- */
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 cột duy nhất */
+  }
+
+  /* --- Trang Dine-in (Gọi món tại quán) --- */
+  .dine-in-grid {
+    grid-template-columns: 1fr; /* 1 cột duy nhất */
+    gap: 30px;
+  }
+
+  .dine-in-page {
+    padding-top: 100px;
+  }
+
+  .order-actions {
+    flex-direction: column; /* Xếp 2 nút "Gọi Món" và "Xác Nhận" theo cột */
+    gap: 15px;
+  }
+
+  .order-actions .btn {
+    width: 100%;
+  }
+
+  /* --- Trang Information (grid 2 cột) --- */
+  .grid-container {
+    grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+  }
+
+  /* --- Floating Cart (Giỏ hàng nổi) --- */
+  .floating-cart {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    width: auto; /* Chiếm gần hết chiều ngang */
+  }
+
+  /* --- Form (Login, Register) --- */
+  .checkout-page {
+    width: 90%;
+    padding: 25px 20px;
+    margin-top: 220px; /* Đẩy xuống dưới header */
+    margin-bottom: 30px;
+  }
+}
+
+/* === Breakpoint cho Mobile Rất Nhỏ (<= 480px) === */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .product-grid {
+    /* Đảm bảo 1 cột trên màn hình siêu nhỏ */
+    grid-template-columns: 1fr;
+  }
+
+  .product-footer {
+    flex-direction: column; /* Xếp giá và nút "Add" theo cột */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    justify-content: center; /* Căn giữa chữ trong nút */
+  }
+
+  .footer-content {
+    padding: 40px 0;
+    gap: 30px;
+  }
+
+  .footer-colum {
+    text-align: center; /* Căn giữa nội dung footer */
+  }
+
+  .footer-colum h3::after {
+    left: 50%; /* Căn giữa gạch chân */
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center; /* Căn giữa icon social */
+  }
+}
+/* ===============================
+   HIỆU ỨNG NAVBAR & NÚT 3 GẠCH
+   =============================== */
+
+/* Cấu hình cho nút 3 gạch */
+#nav-toggle {
+  display: none; /* chỉ hiện ở mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--coffee-gold);
+  font-size: 28px;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+/* Biểu tượng 3 gạch – dùng pseudo element để xoay */
+#nav-toggle i {
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+/* Khi menu mở → đổi màu + xoay 90deg */
+#nav-toggle.active i {
+  transform: rotate(90deg);
+  color: var(--coffee-light);
+}
+
+/* Hiệu ứng trượt cho menu */
+nav ul {
+  display: flex;
+  transition: all 0.4s ease;
+}
+
+/* Mobile nav ẩn mặc định */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 118px;
+    left: 0;
+    width: 100%;
+    background: rgba(17, 17, 17, 0.95);
+    text-align: center;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  /* Khi mở → trượt xuống mượt mà */
+  nav ul.nav-open {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  nav a {
+    color: var(--coffee-gold);
+    font-size: 18px;
+    padding: 12px 0;
+    display: block;
+    transition: background 0.3s ease;
+  }
+
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-secondary {
+    font-size: 12px;
+    border-radius: 12px;
+    align-items: center;
+  }
+  #nav-toggle {
+    display: block;
+    left: 0;
+  }
+}

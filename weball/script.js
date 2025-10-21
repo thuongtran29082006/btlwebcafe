@@ -297,3 +297,35 @@ if (registerForm) {
     window.location.href = "login.html";
   });
 }
+// ===============================
+// NAVBAR TOGGLE HIỆU ỨNG 3 GẠCH (CHUẨN TOÀN TRANG)
+// ===============================
+
+// Đảm bảo code chạy sau khi DOM tải xong
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.getElementById("nav-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (!navToggle || !navMenu) return;
+
+  // Khi bấm nút 3 gạch
+  navToggle.addEventListener("click", () => {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!expanded));
+
+    // Thêm / bỏ class 'active' để xoay icon
+    navToggle.classList.toggle("active");
+
+    // Mở / đóng menu
+    navMenu.classList.toggle("nav-open");
+  });
+
+  // Khi click vào 1 link → đóng menu
+  navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("nav-open");
+      navToggle.classList.remove("active");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+});
