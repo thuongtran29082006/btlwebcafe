@@ -13,6 +13,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <!-- Giỏ hàng dính góc phải -->
   <div class="floating-cart" id="floating-cart">
@@ -23,9 +28,9 @@
     </div>
     <div class="cart-body hidden" id="cart-body">
       <ul id="cart-items"></ul>
-      <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+      <div class="cart-total"><span id="cart-total">0.00</span>VNĐ</div>
       <div class="cart-buttons">
-        <button id="clear-cart" class="btn1 clear-cart">Clear Cart</button>
+        <button id="clear-cart" class="btn1 clear-cart">Xóa Hết</button>
         <a href="checkout.html" id="checkout-btn" class="btn1 checkout-btn"
           >Thanh Toán</a
         >
@@ -36,7 +41,7 @@
   <body>
     <header>
       <div class="container header-container">
-        <a class="logo">
+        <a href="./index.html" class="logo">
           <i class="fa-solid fa-worm logo-icon"></i>
           <div class="logo-text">Timeless<span>Café</span></div>
         </a>
@@ -55,61 +60,33 @@
         </div>
       </div>
     </header>
+    <!-- LAYOUT: thanh danh mục bên trái, sản phẩm bên phải -->
     <section class="products" id="products" style="padding-top: 150px">
-      <div class="container">
-        <div class="product-grid">
-          <div class="product-card">
-            <div class="product-img">
-              <img src="./1.png" alt="Ethiopian Yirgacheffe" />
-            </div>
-            <div class="product-info">
-              <div class="product-tag">BESTSELLER</div>
-              <h3 class="product-title">Ethiopian Yirgacheffe</h3>
-              <p class="product-desc">Floral notes with bright acidity</p>
-              <div class="product-footer">
-                <div class="product-price">$18.99</div>
-                <button
-                  class="btn add-to-cart"
-                  data-name="Ethiopian Yirgacheffe"
-                  data-price="18.99"
-                >
-                  Add to Cart
-                </button>
+      <div class="container products-layout">
+        <!-- LEFT: danh mục -->
+        <aside class="side-nav">
+          <h3>Danh Mục</h3>
+          <ul class="category-list">
+            <li><a href="#drinks">Cà phê</a></li>
+            <li><a href="#food">Đồ ăn</a></li>
+            <li><a href="#desserts">Đồ uống</a></li>
+          </ul>
+        </aside>
+        <!-- RIGHT: nội dung sản phẩm -->
+        <main class="product-area">
+          <!-- Cà Phê -->
+          <h2 class="category-title" id="drinks">Cà phê</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./1.png" alt="Ethiopian Yirgacheffe" />
               </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-img">
-              <img src="./1.png" alt="Colombian Supremo" />
-            </div>
-            <div class="product-info">
-              <h3 class="product-title">Colombian Supremo</h3>
-              <p class="product-desc">Rich caramel and balanced body</p>
-              <div class="product-footer">
-                <div class="product-price">$16.99</div>
-                <button
-                  class="btn add-to-cart"
-                  data-name="Ethiopian Yirgacheffe"
-                  data-price="18.99"
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-img">
-              <img src="./1.png" alt="Dark Roast" />
-            </div>
-            <div class="product-info">
-              <div class="product-tag">NEW</div>
-              <h3 class="product-title">Dark Roast</h3>
-              <p class="product-desc">Bold and intense with deep flavor</p>
-              <div class="product-footer">
-                <div class="product-price">$17.99</div>
+              <div class="product-info">
+                <div class="product-tag">BESTSELLER</div>
+                <h3 class="product-title">Ethiopian Yirgacheffe</h3>
+                <p class="product-desc">Floral notes with bright acidity</p>
                 <div class="product-footer">
+                  <div class="product-price">$18.99</div>
                   <button
                     class="btn add-to-cart"
                     data-name="Ethiopian Yirgacheffe"
@@ -120,8 +97,422 @@
                 </div>
               </div>
             </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./1.png" alt="Colombian Supremo" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Colombian Supremo</h3>
+                <p class="product-desc">Rich caramel and balanced body</p>
+                <div class="product-footer">
+                  <div class="product-price">$16.99</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Colombian Supremo"
+                    data-price="16.99"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./1.png" alt="Dark Roast" />
+              </div>
+              <div class="product-info">
+                <div class="product-tag">NEW</div>
+                <h3 class="product-title">Dark Roast</h3>
+                <p class="product-desc">Bold and intense with deep flavor</p>
+                <div class="product-footer">
+                  <div class="product-price">$17.99</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Dark Roast"
+                    data-price="17.99"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+
+          <!-- ĐỒ ĂN -->
+          <h2 class="category-title" id="food">Đồ Ăn</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/sandwich.png" alt="Sandwich" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Sandwich Gà</h3>
+                <p class="product-desc">Bánh mì kẹp gà, rau thơm</p>
+                <div class="product-footer">
+                  <div class="product-price">$6.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Sandwich Gà"
+                    data-price="6.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- đồ uống -->
+          <h2 class="category-title" id="desserts">Đồ uống</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/croissant.png" alt="Butter Croissant" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Butter Croissant</h3>
+                <p class="product-desc">Flaky layers with rich butter taste</p>
+                <div class="product-footer">
+                  <div class="product-price">$5.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Butter Croissant"
+                    data-price="5.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/cheesecake.png" alt="Cheesecake" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Cheesecake</h3>
+                <p class="product-desc">Creamy and rich New York-style</p>
+                <div class="product-footer">
+                  <div class="product-price">$7.99</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Cheesecake"
+                    data-price="7.99"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="./img/bagel.png" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai</p>
+                <div class="product-footer">
+                  <div class="product-price">$4.50</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="4.50"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     </section>
 
