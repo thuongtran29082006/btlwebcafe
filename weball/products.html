@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - TFT Coffee</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <div class="floating-cart" id="floating-cart">
+    <div class="cart-header">
+      <span>Giỏ hàng (<span id="cart-count">0</span>)</span>
+      <button id="toggle-cart"><i class="fas fa-chevron-down"></i></button>
+    </div>
+    <div class="cart-body hidden" id="cart-body">
+      <ul id="cart-items"></ul>
+      <div class="cart-total">Tổng: <span id="cart-total">0</span>VNĐ</div>
+      <button class="clear-cart" id="clear-cart">Xóa giỏ hàng</button>
+      <button class="confirm-order" id="confirm-order">Xác nhận gọi món</button>
+      <button
+        class="confirm-order"
+        type="button"
+        id="order-online"
+        class="btn submit-btn btn-online"
+      >
+        Đặt Hàng Online
+      </button>
+    </div>
+  </div>
+
+  <body>
+    <header>
+      <div class="container header-container">
+        <a class="logo">
+          <i class="fa-solid fa-worm logo-icon"></i>
+          <div class="logo-text">Timeless<span>Café</span></div>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="./index.html">Trang Chủ</a></li>
+            <li><a href="./products.html">Sản Phẩm</a></li>
+            <li><a href="./checkout.html" id="go-checkout">Dịch Vụ</a></li>
+            <li><a href="./information.html">Thông Tin</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-buttons">
+          <a href="./login.html" class="btn btn-secondary">Đăng Nhập</a>
+          <a href="./register.html" class="btn btn-secondary">Đăng Ký</a>
+        </div>
+      </div>
+    </header>
+    <!-- LAYOUT: thanh danh mục bên trái, sản phẩm bên phải -->
+    <section class="products" id="products" style="padding-top: 150px">
+      <div class="container products-layout">
+        <!-- LEFT: danh mục -->
+        <aside class="side-nav">
+          <h3>Danh Mục</h3>
+          <ul class="category-list">
+            <li><a href="#drinks">Cà phê</a></li>
+            <li><a href="#food">Đồ ăn</a></li>
+            <li><a href="#desserts">Đồ uống</a></li>
+          </ul>
+        </aside>
+        <!-- RIGHT: nội dung sản phẩm -->
+        <main class="product-area">
+          <!-- Cà Phê -->
+          <h2 class="category-title" id="drinks">Cà phê</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Bacsiu.jpg" alt="Ethiopian Yirgacheffe" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bạc sỉu</h3>
+                <p class="product-desc">
+                  Vị đắng nhẹ của cà phê cùng với vị ngọt thanh của sữa
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Ethiopian Yirgacheffe"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Capuchino.jpg" alt="Colombian Supremo" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Capuchino</h3>
+                <p class="product-desc">Đạm đà, béo mịn, chuẩn vị Ý</p>
+                <div class="product-footer">
+                  <div class="product-price">25.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Colombian Supremo"
+                    data-price="25.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/ca-phe-kem-muoi.jpg" alt="Kem trứng muối" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Kem trứng muối</h3>
+                <p class="product-desc">
+                  Béo mặn hòa quyện ngọt ngào, lạ mà ghiền!
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">25.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Kem trứng muối"
+                    data-price="25.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/denda.jpg" alt="Đen đá" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Đen đá</h3>
+                <p class="product-desc">
+                  Cốc đen đá đậm vị cà phê, thơm nồng và mát lạnh, giúp tỉnh táo
+                  và sảng khoái tức thì.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Đen đá"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Nauda.webp" alt="Nâu đá" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Nâu đá</h3>
+                <p class="product-desc">
+                  Vỏ bánh giòn rụm với lớp caramel nướng vàng ươm
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Caramelcake"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ĐỒ ĂN -->
+          <h2 class="category-title" id="food">Đồ Ăn</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Caramelcake.png" alt="Sandwich" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Caramelcake</h3>
+                <p class="product-desc">
+                  Vỏ bánh giòn rụm với lớp caramel nướng vàng ươm
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Caramelcake"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Tiramisucake.jpg" alt="Tiramisucake" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Tiramisucake</h3>
+                <p class="product-desc">
+                  Thơm mùi cà phê và cacao, mang đến vị ngọt.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Tiramisucake"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img
+                  src="menu/Greenteacheesecake.jpg"
+                  alt="Greenteacheesecake"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Greenteacheesecake</h3>
+                <p class="product-desc">Trà xanh đậm vị và phô mai ít béo.</p>
+                <div class="product-footer">
+                  <div class="product-price">25.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Greenteacheesecake"
+                    data-price="25.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Banhsungbo.jpg" alt="Bánh sừng bò" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bánh sừng bò</h3>
+                <p class="product-desc">
+                  Bánh sừng bò thơm, mềm tan trong miệng.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bánh sừng bò"
+                    data-price="20.000 VND"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/ChickenBagels.webp" alt="Bagel" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bagel Phô Mai</h3>
+                <p class="product-desc">Bagel thơm, kem phô mai.</p>
+                <div class="product-footer">
+                  <div class="product-price">15.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bagel Phô Mai"
+                    data-price="15.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/hathuongduong.jpg" alt="Hạt hướng dương" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Hạt hướng dương</h3>
+                <p class="product-desc">
+                  Thơm bùi kết hợp với cà phê là lựa chọn tuyệt vời.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">15.000 VNĐ/ 1 đĩa</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Hạt hướng dương"
+                    data-price="15.000 VNĐ / 1 đĩa"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Bokho.jpg" alt="Bò khô" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Bò khô</h3>
+                <p class="product-desc">
+                  Bò khô dai ngon, đậm vị cay mặn ngọt hòa quyện, là món ăn vặt
+                  hấp dẫn khó cưỡng.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">15.000 VNĐ/ 1 đĩa</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Bò khô"
+                    data-price="15.000 VNĐ / 1 đĩa"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/ngocay.jpg" alt="Ngô cay" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Ngô cay</h3>
+                <p class="product-desc">Cay cay thơm thơm ăn là ghiền!</p>
+                <div class="product-footer">
+                  <div class="product-price">10.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Ngô cay"
+                    data-price="10.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- đồ uống -->
+          <h2 class="category-title" id="desserts">Đồ uống</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/tradaocamsa.jpg" alt="Butter Croissant" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Trà đào cam sả</h3>
+                <p class="product-desc">Vị ngọt nhẹ cùng hương xả thơm.</p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Trà đào cam sả"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Trachanh.png" alt="Trà chanh" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Trà chanh</h3>
+                <p class="product-desc">
+                  Vị chanh hương tươi mát giải nhiệt mùa hè.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">15.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Trà chanh"
+                    data-price="15.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Meda.jpg" alt="Me đá" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Me đá</h3>
+                <p class="product-desc">
+                  Cốc me đá chua ngọt hài hòa, mát lạnh và sảng khoái.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">15.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Me đá"
+                    data-price="15.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Trabidao.webp" alt="Trà bí đao" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Trà bí đao</h3>
+                <p class="product-desc">
+                  Trà bí đao thanh mát, ngọt dịu tự nhiên, giúp giải nhiệt và
+                  thư giãn hiệu quả.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Trà bí đao"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/Matchadaxay.jpg" alt="Mát cha đá xay" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Matcha đá xay</h3>
+                <p class="product-desc">
+                  Matcha đá xay béo thơm, vị trà xanh đậm đà, mang lại cảm giác
+                  mát lạnh và tỉnh táo.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Mát cha đá xay"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-img">
+                <img src="menu/suachuatraicay.jpg" alt="Sữa chua trái cây" />
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Sữa chua trái cây</h3>
+                <p class="product-desc">
+                  Sữa chua trái cây chua ngọt hài hòa, mát lạnh và đầy hương vị
+                  tươi ngon tự nhiên.
+                </p>
+                <div class="product-footer">
+                  <div class="product-price">20.000 VNĐ</div>
+                  <button
+                    class="btn add-to-cart"
+                    data-name="Sữa chua trái cây"
+                    data-price="20.000 VNĐ"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-colum">
+            <h3>Tìm Hiểu Về Chúng Tôi</h3>
+            <p
+              style="
+                color: var(--coffee-gold);
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-weight: 600;
+              "
+            >
+              TimelessCafé
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div class="footer-colum">
+            <h3>Truy Cập Nhanh</h3>
+            <ul class="footer-links">
+              <li><a href="./index.html">Trang Chủ</a></li>
+              <li><a href="./products.html">Sản Phẩm</a></li>
+              <li><a href="./checkout.html">Dịch Vụ</a></li>
+              <li><a href="./information.html">Thông Tin</a></li>
+            </ul>
+          </div>
+          <div class="footer-colum">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <ul class="footer-links">
+              <li><i class="fa-solid fa-phone"></i> Hotline: 1900 2345 18</li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i> Địa Chỉ: Phòng 702,
+                Tầng 7, Tòa nhà Plaza
+              </li>
+
+              <li>
+                <i class="fa-solid fa-envelope"></i> Email: timeless@gmail.com
+              </li>
+              <li>
+                <i class="fa-solid fa-clock"></i> Giờ Hoạt Động: 6.00-22.00
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

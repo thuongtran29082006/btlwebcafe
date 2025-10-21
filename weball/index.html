@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="veiwport" content="width=device-width,initial-scale=1.0" />
+    <title>My Coffee</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <a class="logo">
+          <i class="fa-solid fa-worm logo-icon"></i>
+          <div class="logo-text">Timeless<span>Café</span></div>
+        </a>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="./index.html">Trang Chủ</a></li>
+            <li><a href="./products.html">Sản Phẩm</a></li>
+            <li><a href="./checkout.html" id="go-checkout">Dịch Vụ</a></li>
+            <li><a href="./information.html">Thông Tin</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-buttons">
+          <a href="./login.html" class="btn btn-secondary">Đăng Nhập</a>
+          <a href="./register.html" class="btn btn-secondary">Đăng Ký</a>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-subtitle">
+            <i class="fa-solid fa-seedling"></i>
+            "Khám phá hương vị độc bản"
+          </div>
+          <h1 class="hero-title">
+            Ghé Thăm Quán<br /><span> Khám Phá Hương Vị</span>
+          </h1>
+          <p class="hero-text">
+            "TimelessCafé được sinh ra từ khát khao lưu giữ những giá trị nguyên
+            bản của hương vị cà phê. Nơi mà từng hạt cà phê được nâng niu, từng
+            giây phút thưởng thức trở nên trọn vẹn,cổ điển trong tâm hồn, hiện
+            đại trong cách cảm nhận."
+          </p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-secondary">Tìm hiểu thêm</a>
+            <a href="./products.html" class="btn btn-secondary"
+              >Thỏa mã vị giác</a
+            >
+          </div>
+        </div>
+        <img src="menu/4.jpg" alt="Cafe" width="370px" class="hero-img" />
+      </div>
+    </section>
+    <section class="products" id="products">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Các gợi ý!</div>
+          <h2 class="section-title">Hương Vị Vượt Thời Gian</h2>
+          <p class="section-desc">
+            Dưới đây là ba dòng cà phê được khách hàng yêu thích nhất – biểu
+            tượng cho phong cách và đam mê của TimelessCafé.
+          </p>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="menu/banchaybacxiu.png" alt="cafe2" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Cà phê sữa</h3>
+              <p class="product-desc">Hương vị nguyên bản</p>
+              <div class="product-footer">
+                <div class="product-price">20.000 VNĐ</div>
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">
+              <img src="menu/banhbanchay1.png" alt="banh ngot ban chay" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Bánh Matcha</h3>
+              <p class="product-desc">Matcha tự nhiên</p>
+              <div class="product-footer">
+                <div class="product-price">25.000 VNĐ</div>
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">
+              <img src="menu/hoaquadamnew.png" alt="" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Hoa quả dầm</h3>
+              <p class="product-desc">Hoa quả tươi nhập khẩu</p>
+              <div class="product-footer">
+                <div class="product-price">25.000 VNĐ</div>
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-colum">
+            <h3>Tìm Hiểu Về Chúng Tôi</h3>
+            <p
+              style="
+                color: var(--coffee-gold);
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-weight: 600;
+              "
+            >
+              TimelessCafé
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div class="footer-colum">
+            <h3>Truy Cập Nhanh</h3>
+            <ul class="footer-links">
+              <li><a href="./index.html">Trang Chủ</a></li>
+              <li><a href="./products.html">Sản Phẩm</a></li>
+              <li><a href="./checkout.html">Dịch Vụ</a></li>
+              <li><a href="./information.html">Thông Tin</a></li>
+            </ul>
+          </div>
+          <div class="footer-colum">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <ul class="footer-links">
+              <li><i class="fa-solid fa-phone"></i> Hotline: 1900 2345 18</li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i> Địa Chỉ: Phòng 702,
+                Tầng 7, Tòa nhà Plaza
+              </li>
+
+              <li>
+                <i class="fa-solid fa-envelope"></i> Email: timeless@gmail.com
+              </li>
+              <li>
+                <i class="fa-solid fa-clock"></i> Giờ Hoạt Động: 6.00-22.00
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
