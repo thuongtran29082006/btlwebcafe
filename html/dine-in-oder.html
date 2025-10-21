@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gọi Món - Timeless Café</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body class="dine-body">
+    <header>
+      <header>
+        <div class="container header-container">
+          <a class="logo">
+            <i class="fa-solid fa-worm logo-icon"></i>
+            <div class="logo-text">Timeless<span>Café</span></div>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="./index.html">Trang Chủ</a></li>
+              <li><a href="./products.html">Sản Phẩm</a></li>
+              <li><a href="./checkout.html" id="go-checkout">Dịch Vụ</a></li>
+              <li><a href="./information.html">Thông Tin</a></li>
+            </ul>
+          </nav>
+
+          <div class="nav-buttons">
+            <a href="./login.html" class="btn btn-secondary">Đăng Nhập</a>
+            <a href="./register.html" class="btn btn-secondary">Đăng Ký</a>
+          </div>
+        </div>
+      </header>
+    </header>
+
+    <main class="dine-in-page">
+      <div class="container">
+        <h2 class="section-title">Gọi Món Tại Quán</h2>
+
+        <div class="dine-in-grid">
+          <!-- Form thông tin bàn -->
+          <div class="table-info">
+            <h3>Thông Tin Bàn</h3>
+            <form id="table-form">
+              <div class="form-group">
+                <label for="table-number">Số bàn:</label>
+                <input type="number" id="table-number" required min="1" />
+              </div>
+
+              <div class="form-group">
+                <label for="guests">Số người:</label>
+                <input type="number" id="guests" required min="1" />
+              </div>
+            </form>
+          </div>
+
+          <!-- Danh sách món đã gọi -->
+          <div class="order-summary">
+            <h3>Món Đã Gọi</h3>
+            <div class="order-list">
+              <ul id="ordered-items"></ul>
+              <div class="order-total">
+                Tổng cộng: <span id="order-total">0 VNĐ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-actions">
+          <a href="./products.html" class="btn submit-btn"> Gọi Món </a>
+          <button type="button" id="confirm-order" class="btn submit-btn">
+            Xác Nhận Gọi Món
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-colum">
+            <h3>Tìm Hiểu Về Chúng Tôi</h3>
+            <p
+              style="
+                color: var(--coffee-gold);
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-weight: 600;
+              "
+            >
+              TimelessCafé
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div class="footer-colum">
+            <h3>Truy Cập Nhanh</h3>
+            <ul class="footer-links">
+              <li><a href="./index.html">Trang Chủ</a></li>
+              <li><a href="./products.html">Sản Phẩm</a></li>
+              <li><a href="./checkout.html">Dịch Vụ</a></li>
+              <li><a href="./information.html">Thông Tin</a></li>
+            </ul>
+          </div>
+          <div class="footer-colum">
+            <h3>Liên Hệ Với Chúng Tôi</h3>
+            <ul class="footer-links">
+              <li><i class="fa-solid fa-phone"></i> Hotline: 1900 2345 18</li>
+              <li>
+                <i class="fa-solid fa-location-dot"></i> Địa Chỉ: Phòng 702,
+                Tầng 7, Tòa nhà Plaza
+              </li>
+
+              <li>
+                <i class="fa-solid fa-envelope"></i> Email: timeless@gmail.com
+              </li>
+              <li>
+                <i class="fa-solid fa-clock"></i> Giờ Hoạt Động: 6.00-22.00
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
