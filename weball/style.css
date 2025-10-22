@@ -1346,15 +1346,16 @@ footer {
   margin: 0;
   background-color: aliceblue;
 }
-
 /* === Breakpoint cho Tablet (<= 992px) === */
-@media (max-width: 992px) {
+@media (max-width: 1023px) {
   /* --- Bố cục trang Products (sidebar + grid) --- */
   .products-layout {
     grid-template-columns: 1fr; /* 1 cột duy nhất */
     gap: 30px;
   }
-
+  .hero-img {
+    width: 200px;
+  }
   .side-nav {
     position: static; /* Gỡ "dính" sidebar */
     width: 100%;
@@ -1417,14 +1418,17 @@ footer {
 }
 /*==================================*/
 /* === Breakpoint cho Mobile (<= 768px) === */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* --- Header --- */
   header {
     padding: 20px 0;
     position: fixed; /* Giữ header cố định khi cuộn */
   }
   body {
-    margin-top: 100px;
+    margin-top: 30px;
+  }
+  .hero-img {
+    background-image: none;
   }
   .header-container {
     flex-direction: row-reverse; /* Xếp logo, nav, buttons theo cột */
@@ -1574,54 +1578,6 @@ footer {
   }
 }
 
-/* === Breakpoint cho Mobile Rất Nhỏ (<= 480px) === */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 30px;
-  }
-
-  .hero-text {
-    font-size: 15px;
-  }
-
-  .section-title {
-    font-size: 28px;
-  }
-
-  .product-grid {
-    /* Đảm bảo 1 cột trên màn hình siêu nhỏ */
-    grid-template-columns: 1fr;
-  }
-
-  .product-footer {
-    flex-direction: column; /* Xếp giá và nút "Add" theo cột */
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .add-to-cart {
-    width: 100%;
-    justify-content: center; /* Căn giữa chữ trong nút */
-  }
-
-  .footer-content {
-    padding: 40px 0;
-    gap: 30px;
-  }
-
-  .footer-colum {
-    text-align: center; /* Căn giữa nội dung footer */
-  }
-
-  .footer-colum h3::after {
-    left: 50%; /* Căn giữa gạch chân */
-    transform: translateX(-50%);
-  }
-
-  .social-links {
-    justify-content: center; /* Căn giữa icon social */
-  }
-}
 /* ===============================
    HIỆU ỨNG NAVBAR & NÚT 3 GẠCH
    =============================== */
@@ -1660,7 +1616,7 @@ nav ul {
   nav ul {
     flex-direction: column;
     position: absolute;
-    top: 118px;
+    top: 80%;
     left: 0;
     width: 100%;
     background: rgba(17, 17, 17, 0.95);
@@ -1702,5 +1658,72 @@ nav ul {
   #nav-toggle {
     display: block;
     left: 0;
+  }
+}
+/* Auth button and menu styles */
+#auth-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--coffee-gold);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header-container {
+    gap: 12px;
+  }
+
+  #nav-toggle,
+  #auth-toggle {
+    display: block;
+    order: -1;
+  }
+
+  /* Style for auth buttons container */
+  .nav-buttons {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 250px;
+    background: rgba(22, 21, 21, 0.98);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-buttons.show {
+    right: 10px;
+  }
+
+  .nav-buttons .btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* Overlay for auth menu */
+  .auth-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+  }
+
+  .auth-overlay.active {
+    opacity: 1;
+    visibility: visible;
   }
 }

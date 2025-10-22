@@ -329,3 +329,127 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+function initAuthMenu() {
+  const authToggle = document.getElementById("auth-toggle");
+  const authMenu = document.getElementById("auth-menu");
+
+  if (!authToggle || !authMenu) return;
+
+  // Create overlay if not exists
+  let overlay = document.querySelector(".auth-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "auth-overlay";
+    document.body.appendChild(overlay);
+  }
+
+  function openAuthMenu() {
+    authMenu.classList.add("show");
+    overlay.classList.add("active");
+    document.body.classList.add("no-scroll");
+  }
+
+  function closeAuthMenu() {
+    authMenu.classList.remove("show");
+    overlay.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+  }
+
+  // Toggle auth menu
+  authToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (authMenu.classList.contains("show")) {
+      closeAuthMenu();
+    } else {
+      openAuthMenu();
+    }
+  });
+
+  // Close when clicking overlay
+  overlay.addEventListener("click", closeAuthMenu);
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!authMenu.contains(e.target) && !authToggle.contains(e.target)) {
+      closeAuthMenu();
+    }
+  });
+
+  // Close on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAuthMenu();
+  });
+}
+// Auth Menu Toggle Function
+function initAuthMenu() {
+  const authToggle = document.getElementById("auth-toggle");
+  const authMenu = document.querySelector(".nav-buttons");
+
+  if (!authToggle || !authMenu) return;
+
+  // Create overlay if not exists
+  let overlay = document.querySelector(".auth-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "auth-overlay";
+    document.body.appendChild(overlay);
+  }
+
+  function openAuthMenu() {
+    authMenu.classList.add("show");
+    overlay.classList.add("active");
+    authToggle.querySelector("i").classList.remove("fa-user");
+    authToggle.querySelector("i").classList.add("fa-times");
+    document.body.classList.add("no-scroll");
+  }
+
+  function closeAuthMenu() {
+    authMenu.classList.remove("show");
+    overlay.classList.remove("active");
+    authToggle.querySelector("i").classList.remove("fa-times");
+    authToggle.querySelector("i").classList.add("fa-user");
+    document.body.classList.remove("no-scroll");
+  }
+
+  // Toggle auth menu
+  authToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (authMenu.classList.contains("show")) {
+      closeAuthMenu();
+    } else {
+      openAuthMenu();
+    }
+  });
+
+  // Close when clicking overlay
+  overlay.addEventListener("click", closeAuthMenu);
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!authMenu.contains(e.target) && !authToggle.contains(e.target)) {
+      closeAuthMenu();
+    }
+  });
+
+  // Close on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAuthMenu();
+  });
+
+  // Close auth menu when clicking nav links
+  const navLinks = document.querySelectorAll(".nav-buttons a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeAuthMenu);
+  });
+}
+
+// Initialize auth menu when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // Update auth toggle button HTML
+  const authToggle = document.getElementById("auth-toggle");
+  if (authToggle) {
+    authToggle.innerHTML = '<i class="fa-solid fa-user"></i>';
+  }
+
+  initAuthMenu();
+});
