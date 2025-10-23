@@ -453,3 +453,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initAuthMenu();
 });
+// Kiểm tra đăng nhập và chuyển hướng
+function checkLoginRequired() {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  if (!loggedInUser) {
+    alert("Vui lòng đăng nhập để sử dụng chức năng này!");
+    window.location.href = "login.html";
+    return false;
+  }
+  return true;
+}
+
+// Cập nhật UI theo trạng thái đăng nhập
+function updateLoginUI() {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  const navButtons = document.querySelector(".nav-buttons");
+
+  if (loggedInUser && navButtons) {
+    navButtons.innerHTML = `
+      <button id="logout-btn" class="btn btn-secondary">Đăng xuất</button>
+    `;
+
+    const logoutBtn = document.getElementById("logout-btn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("loggedInUser");
+        alert("Đã đăng xuất thành công!");
+        window.location.reload();
+      });
+    }
+  }
+}
+
+//Thêm kiểm tra đăng nhập vào các chức năng
+document.addEventListener("DOMContentLoaded", () => {
+  updateLoginUI();
+
+  // Kiểm tra đăng nhập cho Add to Cart
+  document.querySelectorAll(".add-to-cart").forEach((btn) => {
+    const originalClick = btn.onclick;
+    btn.onclick = (e) => {
+      if (!checkLoginRequired()) return;
+      if (originalClick) originalClick(e);
+    };
+  });
+
+  // Kiểm tra đăng nhập cho Checkout
+  const checkoutForm = document.getElementById("checkout-form");
+  if (checkoutForm) {
+    const originalSubmit = checkoutForm.onsubmit;
+    checkoutForm.onsubmit = (e) => {
+      if (!checkLoginRequired()) {
+        e.preventDefault();
+        return;
+      }
+      if (originalSubmit) originalSubmit(e);
+    };
+  }
+
+  // Kiểm tra đăng nhập cho Order Online
+  const onlineBtn = document.getElementById("order-online");
+  if (onlineBtn) {
+    const originalClick = onlineBtn.onclick;
+    onlineBtn.onclick = (e) => {
+      if (!checkLoginRequired()) return;
+      if (originalClick) originalClick(e);
+    };
+  }
+
+  // Kiểm tra đăng nhập cho Confirm Order
+  const confirmBtn = document.getElementById("confirm-order");
+  if (confirmBtn) {
+    const originalClick = confirmBtn.onclick;
+    confirmBtn.onclick = (e) => {
+      if (!checkLoginRequired()) return;
+      if (originalClick) originalClick(e);
+    };
+  }
+});
